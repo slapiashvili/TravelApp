@@ -66,7 +66,4 @@ struct MainView_Previews: PreviewProvider {
     }
 }
 
-#Preview {
-    MainView_Previews() as! any View
-}
 
