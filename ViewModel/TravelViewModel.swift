@@ -47,13 +47,4 @@ class TravelViewModel: ObservableObject {
 }
 
 
-struct DestinationButtonStyle: ButtonStyle {
-    func makeBody(configuration: Configuration) -> some View {
-        configuration.label
-            .padding()
-            .background(Color("travelAppDarkGreen"))
-            .foregroundColor(.white)
-            .cornerRadius(8)
-            .frame(width: 120, height: 100)
-    }
-}
+

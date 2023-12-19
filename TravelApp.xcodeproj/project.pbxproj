@@ -18,6 +18,7 @@
 		3C79F6AC2B2B426600799C95 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C79F6AB2B2B426600799C95 /* MainView.swift */; };
 		3C79F6AE2B2B42A000799C95 /* TravelDestination.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C79F6AD2B2B42A000799C95 /* TravelDestination.swift */; };
 		3C79F6B02B2B42B900799C95 /* TravelViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C79F6AF2B2B42B900799C95 /* TravelViewModel.swift */; };
+		3CA652512B3232D900167A8E /* DestinationButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CA652502B3232D900167A8E /* DestinationButtonStyle.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,6 +53,7 @@
 		3C79F6AB2B2B426600799C95 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		3C79F6AD2B2B42A000799C95 /* TravelDestination.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TravelDestination.swift; sourceTree = "<group>"; };
 		3C79F6AF2B2B42B900799C95 /* TravelViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TravelViewModel.swift; sourceTree = "<group>"; };
+		3CA652502B3232D900167A8E /* DestinationButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DestinationButtonStyle.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,6 +86,7 @@
 			children = (
 				3C79F6AB2B2B426600799C95 /* MainView.swift */,
 				3C79F6A52B2B40D900799C95 /* DestinationDetailsView.swift */,
+				3CA652502B3232D900167A8E /* DestinationButtonStyle.swift */,
 				3C79F6A72B2B413400799C95 /* SubDetailsViewils.swift */,
 			);
 			path = Views;
@@ -305,6 +308,7 @@
 				3C79F6B02B2B42B900799C95 /* TravelViewModel.swift in Sources */,
 				3C79F6782B2B3D3600799C95 /* TravelAppApp.swift in Sources */,
 				3C79F6A62B2B40D900799C95 /* DestinationDetailsView.swift in Sources */,
+				3CA652512B3232D900167A8E /* DestinationButtonStyle.swift in Sources */,
 				3C79F6AC2B2B426600799C95 /* MainView.swift in Sources */,
 				3C79F6AE2B2B42A000799C95 /* TravelDestination.swift in Sources */,
 			);
