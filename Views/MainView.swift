@@ -7,49 +7,61 @@
 
 import SwiftUI
 
+
 struct MainView: View {
+    //MARK: -properties
     @ObservedObject var viewModel: TravelViewModel
     @State private var isShowingAlert = false
     @State private var alertMessage = ""
+    
+    // MARK: - Private Views
+    private var titleView: some View {
+        Text("Travel Destinations")
+            .font(.title)
+            .foregroundColor(Color("travelAppDarkGreen"))
+            .padding(.top, 16)
+    }
 
-    var body: some View {
-        NavigationView {
-            VStack {
-                Text("Travel Destinations")
-                    .font(.title)
-                    .foregroundColor(Color("travelAppDarkGreen"))
-                    .padding(.top, 16)
-
-                List(viewModel.destinations, id: \.name) { destination in
-                    NavigationLink(destination: DestinationDetailsView(destination: destination)) {
-                        Text(destination.name)
-                            .padding()
-                            .background(Color("travelAppLightGreen"))
-                            .cornerRadius(10)
-                    }
-                    .listRowBackground(Color("travelAppLightGreen"))
-                }
-                
-                Spacer()
-
-                HStack {
-                    Button("Travel Tips") {
-                        let tip = viewModel.randomTravelTip()
-                        showAlert(message: tip)
-                    }
+    private var destinationListView: some View {
+        List(viewModel.destinations, id: \.name) { destination in
+            NavigationLink(destination: DestinationDetailsView(destination: destination)) {
+                Text(destination.name)
                     .padding()
                     .background(Color("travelAppLightGreen"))
                     .cornerRadius(10)
+            }
+            .listRowBackground(Color("travelAppLightGreen"))
+        }
+        .background(Color("travelAppLightGreen"))
+    }
 
+    private var travelTipsButton: some View {
+        Button("Travel Tips") {
+            let tip = viewModel.randomTravelTip()
+            showAlert(message: tip)
+        }
+        .padding()
+        .background(Color("travelAppLightGreen"))
+        .cornerRadius(10)
+    }
+    
+    //MARK: - Body
+    var body: some View {
+        NavigationView {
+            VStack {
+                titleView
+                destinationListView
+                Spacer()
+                HStack {
+                    travelTipsButton
                 }
             }
-
             .font(.title)
             .foregroundColor(Color("travelAppDarkGreen"))
+            .background(Color("travelAppLightGreen"))
             .alert(isPresented: $isShowingAlert) {
                 Alert(title: Text("Travel Tip"), message: Text(alertMessage), dismissButton: .default(Text("Got it!")))
             }
-            .background(Color("travelAppLightGreen"))
         }
     }
 
@@ -65,5 +77,7 @@ struct MainView_Previews: PreviewProvider {
         MainView(viewModel: viewModel)
     }
 }
+
+
 
 

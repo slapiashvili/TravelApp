@@ -7,10 +7,12 @@
 
 import SwiftUI
 
-struct DestinationDetailsView: View {
-    var destination: TravelDestination
 
-    var body: some View {
+struct DestinationDetailsView: View {
+    //MARK: - properties
+    var destination: TravelDestination
+    // MARK: - Private Views
+    private var headerView: some View {
         VStack {
             Image(destination.imageName)
                 .resizable()
@@ -19,10 +21,11 @@ struct DestinationDetailsView: View {
 
             Text(destination.description)
                 .padding()
-        } 
-        
+        }
+    }
 
-        HStack (spacing: 2) {
+    private var subcategoriesView: some View {
+        HStack(spacing: 2) {
             NavigationLink(destination: SubDetailView(title: "Transport", info: destination.transportInfo)) {
                 Text("Transport")
             }
@@ -38,11 +41,20 @@ struct DestinationDetailsView: View {
             }
             .buttonStyle(DestinationButtonStyle())
         }
+        .background(Color("travelAppLightGreen"))
+    }
+//MARK: - Body
+    var body: some View {
+        VStack {
+            headerView
+            subcategoriesView
+        }
         .navigationBarTitle(destination.name)
         .background(Color("travelAppLightGreen"))
         .ignoresSafeArea()
     }
 }
+
 
                          
 
